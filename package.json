@@ -1,0 +1,22 @@
+{
+  "name": "slidecript_glsl",
+  "version": "0.0.1",
+  "description": "presentation text and glsl shader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doxas/slidecript_glsl.git"
+  },
+  "main": "build/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.3.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.9.4",
+    "gulp-load-plugins": "^0.9.0",
+    "gulp-uglify": "^1.1.0",
+    "run-sequence": "^1.0.2"
+  },
+  "author": "doxas",
+  "license": "MIT"
+}

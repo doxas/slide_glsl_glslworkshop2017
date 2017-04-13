@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js" type="text/javascript"></script>
+    <script id="vs" type="x-shader/x-vertex">
+attribute vec3 position;
+varying   vec2 vTexCoord;
+
+void main(){
+    vTexCoord   = (position + 1.0).xy / 2.0;
+    gl_Position = vec4(position, 1.0);
+}
+    </script>
+    <script id="fs" type="x-shader/x-fragment">
+precision mediump float;
+
+uniform sampler2D texture;
+varying vec2      vTexCoord;
+
+void main(){
+    gl_FragColor = texture2D(texture, vTexCoord);
+}
+    </script>
+
+    <title>GLSL Workshop 2016</title>
+
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="wrap">
+        <div id="header">
+            <h1>GLSL Workshop 2016</h1>
+            <div id="author">doxas</div>
+        </div>
+        <div id="content">
+            <div class="page">
+                <h2>GLSL Workshop 2016</h2>
+                <h3> - 楽しく始めよう！ シェーダコーディング - </h3>
+            </div>
+
+<div class="page">
+	<h3><span style="font-size: 72px; display: inline-block; margin: 70px 0px 50px">GLSL（OpenGL Shading Language）</span></h3>
+</div>
+<div class="page">
+	<h3><span style="font-size: 72px; display: inline-block; margin: 70px 0px 50px">GLSL（OpenGL Shading Language）</span></h3>
+	<h3><span style="color: white; font-family: yu gothic;"><br>GLSL は OpenGL 用のシェーダ記述言語です。<br>シェーダは慣れてくれば意外と簡単！<br>とにかく気軽にチャレンジしてみましょう。<br><br><br><span style="color: deeppink; font-family: cursive">doxas.org/work/glsl_editor/</span><br><br>シェーダエディタを使って Let's enjoy!</span></h3>
+</div>
+<div class="page">
+	<h4>schedule</h4>
+	<ul>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">10:30 ~</span>: 開場</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">11:00 ~ 11:15</span>: オープニング</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">11:15 ~ 12:15</span>: GLSL 基礎講座（@h_doxas）</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">12:15 ~ 13:30</span>: 休憩時間</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">13:30 ~ 14:15</span>: three.jsによる、Webフォントを利用した文字のGPGPUパーティクル表現（@tkm0125）</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">14:30 ~ 15:15</span>: GLSL SandboxでHello World！（@notargs）</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">15:15 ~ 17:00</span>: ライブコーディング＆もくもくタイム</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">17:00</span>: <em>作品投稿締め切り</em></li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">17:15 ~ 18:15</span>: 作品上映・作品紹介</li>
+		<li><span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">18:15 ~</span>: クロージング</li>
+	</ul>
+</div>
+<div class="page">
+	<h4>information</h4>
+	<ul>
+		<li>開催時間中の会場の出入りは自由にできます</li>
+		<li>ネックストラップが参加証になります</li>
+		<li>会場のあるビル内にはコンビニ、レストラン等あります</li>
+		<li>会場は飲食物持ち込み可能です（ゴミ箱もあります）</li>
+		<li>ゴミの管理などは各自、常識的な対応をお願いします</li>
+		<li>喫煙所は同ビル内 4F にあります</li>
+		<li>わからないことはどんどん質問してね！</li>
+	</ul>
+</div>
+<div class="page">
+	<h4>resource</h4>
+	<ul>
+        <li>GLSL 基礎講座スライド：   <span style="font-family: cursive; color: deeppink;">https://doxas.org/slide/glslwork2016/</span></li>
+		<li>GLSL オンラインエディタ： <span style="font-family: cursive; color: deeppink;">https://doxas.org/work/glsl_editor/</span></li>
+		<li>投稿用ログインフォーム：  <span style="font-family: cursive; color: deeppink;">https://glglgl.org/root.html</span></li>
+	</ul>
+    <ul>
+        <li>Wi-fi: password</li>
+        <li>MONO1: m-guest1</li>
+        <li>MONO2: m-guest2</li>
+        <li>MONO3: m-guest3</li>
+        <li>MONO4: m-guest4</li>
+    </ul>
+</div>
+<div class="page">
+	<h4>sponsor</h4>
+	<p><div style="text-align: center;"><p style="margin: 0px auto;"><img src="image/logo.png" alt="logo" style="margin: 0px auto;"></p><p style="margin: 50px auto; color: deeppink; font-size: 48px;">www.digirea.com</p></div></p>
+</div>
+<div class="page">
+	<p><div style="text-align: center;"><img src="image/digirea.png" alt="digirea" style="width: 85%; margin: 0px auto;"></div></p>
+</div>
+
+        </div>
+        <div id="parts" class="none">
+            <div id="items">
+                <div id="partstitle">
+                    <h5 class="hidden"></h5>
+                    <div id="underline" class="hidden"></div>
+                </div>
+                <div id="description">
+                    <p class="hidden"></p>
+                </div>
+                <div id="partsauthor">
+                    <p class="hidden"></p>
+                </div>
+            </div>
+            <div id="partsnumber" class="hidden">00</div>
+            <div id="partscorner" class="hidden"></div>
+            <div id="partslayer"></div>
+        </div>
+        <div id="footer">
+            <div id="arrow">
+                <div id="prev">≪</div>
+                <div id="next">≫</div>
+            </div>
+            <div id="navi">
+                <div id="count">0</div>
+                <div id="separator">|</div>
+                <div id="total">0</div>
+            </div>
+            <div id="bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
