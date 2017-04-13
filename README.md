@@ -1,4 +1,4 @@
-# glsl workshop 2016 presentation
+# glsl workshop 2017 presentation
 
 presentation demo.
 
